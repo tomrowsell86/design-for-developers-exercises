@@ -18,6 +18,7 @@ body {
   display: grid;
   column-gap: 1em;
   grid-template-columns: 5% repeat(10, min(87px, calc((100% - 10*16px)/12))) 5%;
+  grid-template-rows: 0.2fr 1fr 1fr auto;
 }
 
 main,
@@ -51,6 +52,7 @@ header,
 
 header {
   grid-column: 3 / 11;
+  grid-row: 1;
 }
 
 header.main-heading {
@@ -60,10 +62,15 @@ header.main-heading {
 nav {
   display: flex;
   justify-content: space-between;
+  padding-block-end: 1em;
 }
 
 nav a {
   text-decoration: none;
+}
+
+main {
+  grid-row: 2
 }
 
 p {
@@ -75,13 +82,32 @@ p {
 section.hero {
   display: grid;
   grid-template-columns: subgrid;
-
+  grid-template-rows: 1fr 0.5fr 2fr;
+  background-size: cover;
   background-repeat: no-repeat;
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../assets/images/beautiful-sunset-on-the-beach-with-palm-tree-for-travel-and-vacation-free-photo.JPG');
-  background-position: 20% 20%;
+  background-position: 20% 30%;
 }
 
 section.hero .sub-heading {
   grid-column: 3/ span 5;
   color: wheat;
+}
+
+.giant-search {
+  grid-column: 3/ -3;
+  grid-row: 2;
+  font-size: 24pt;
+  line-height: 36pt;
+  border-start-start-radius: 0.5em;
+  border-end-start-radius: 0.5em;
+  padding-inline: 0.5em;
+
+}
+
+.giant-search+button {
+  grid-row: 2;
+  font-size: 24pt;
+  grid-column: -4;
+  border-radius: 0 0 0.5em 0.5em;
 }
