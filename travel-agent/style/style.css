@@ -1,0 +1,87 @@
+@font-face {
+  font-family: 'Dosis';
+  src: url('./fonts/Dosis/Dosis-VariableFont_wght.ttf');
+}
+
+@font-face {
+  font-family: 'Quicksand';
+  src: url('./fonts/Quicksand/Quicksand-VariableFont_wght.ttf');
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  display: grid;
+  column-gap: 1em;
+  grid-template-columns: 5% repeat(10, min(87px, calc((100% - 10*16px)/12))) 5%;
+}
+
+main,
+section.hero {
+  display: grid;
+  grid-template-columns: subgrid;
+  grid-column: 1/span 13;
+}
+
+header,
+.main-heading,
+.sub-heading {
+  font-family: 'Quicksand';
+}
+
+.main-heading {
+  font-size: 60px;
+  margin-block-start: 4px;
+  margin-block-end: 8px;
+}
+
+.sub-heading {
+  font-size: 36px;
+  margin-block-start: 8px;
+  margin-block-end: 4px;
+}
+
+.main-heading {
+  text-align: center;
+}
+
+header {
+  grid-column: 3 / 11;
+}
+
+header.main-heading {
+  grid-column: 4/10;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+nav a {
+  text-decoration: none;
+}
+
+p {
+  line-height: 24px;
+  font-size: 16;
+  font-family: dosis;
+}
+
+section.hero {
+  display: grid;
+  grid-template-columns: subgrid;
+
+  background-repeat: no-repeat;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../assets/images/beautiful-sunset-on-the-beach-with-palm-tree-for-travel-and-vacation-free-photo.JPG');
+  background-position: 20% 20%;
+}
+
+section.hero .sub-heading {
+  grid-column: 3/ span 5;
+  color: wheat;
+}
